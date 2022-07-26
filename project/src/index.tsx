@@ -28,6 +28,18 @@ const ListOfFilmsPreview = [
   { filmName: 'Mindhunter', imageUrl: 'img/mindhunter.jpg', filmPageUrl: 'film-page.html' },
   { filmName: 'Midnight Special', imageUrl: 'img/midnight-special.jpg', filmPageUrl: 'film-page.html' },
 ];
+const ListOfGenres = [
+  { link: '#', name: 'All genres', active: true },
+  { link: '#', name: 'Comedies', active: false },
+  { link: '#', name: 'Crime', active: false },
+  { link: '#', name: 'Documentary', active: false },
+  { link: '#', name: 'Dramas', active: false },
+  { link: '#', name: 'Horror', active: false },
+  { link: '#', name: 'Kids & Family', active: false },
+  { link: '#', name: 'Romance', active: false },
+  { link: '#', name: 'Sci-Fi', active: false },
+  { link: '#', name: 'Thrillers', active: false }
+];
 
 const СFilmData = {
   filmName: 'The Grand Budapest Hotel',
@@ -40,6 +52,6 @@ const СFilmData = {
 
 root.render(
   <React.StrictMode>
-    <App filmData={СFilmData} list={ListOfFilmsPreview} />
+    <App filmData={СFilmData} list={ListOfFilmsPreview} listOfGenres={ListOfGenres} />
   </React.StrictMode>,
 );

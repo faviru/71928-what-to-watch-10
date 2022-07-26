@@ -19,3 +19,9 @@ export type FilmCardInfo = {
   release: number,
   myFilmCardCount: number
 }
+
+export type GenrePropsType = {
+  link: string,
+  name: string,
+  active: boolean
+};

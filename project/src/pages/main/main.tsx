@@ -1,10 +1,12 @@
 import SmallFilmCard from '../../components/small-film-card';
 import FilmCard from '../../components/film-card';
 import Footer from '../../components/footer';
-import { FilmCardInfo, SmallFilm } from '../../types/types';
+import GenreListItem from '../../components/genres-list-item';
+import { FilmCardInfo, SmallFilm, GenrePropsType } from '../../types/types';
 
 type MainProps = {
   filmData: FilmCardInfo,
+  listOfGenres: GenrePropsType[],
   list: SmallFilm[]
 }
 
@@ -13,6 +15,10 @@ function MainPage(props: MainProps): JSX.Element {
   const listItems =
     props.list.map((item) =>
       <SmallFilmCard filmName={item.filmName} imageUrl={item.imageUrl} filmPageUrl={item.filmPageUrl} key={item.filmName} />
+    );
+  const GenresList =
+    props.listOfGenres.map((item) =>
+      <GenreListItem name={item.name} link={item.link} active={item.active} key={item.name} />
     );
 
   return (
@@ -31,36 +37,7 @@ function MainPage(props: MainProps): JSX.Element {
           <h2 className="catalog__title visually-hidden">Catalog</h2>
 
           <ul className="catalog__genres-list">
-            <li className="catalog__genres-item catalog__genres-item--active">
-              <a href="#" className="catalog__genres-link">All genres</a>
-            </li>
-            <li className="catalog__genres-item">
-              <a href="#" className="catalog__genres-link">Comedies</a>
-            </li>
-            <li className="catalog__genres-item">
-              <a href="#" className="catalog__genres-link">Crime</a>
-            </li>
-            <li className="catalog__genres-item">
-              <a href="#" className="catalog__genres-link">Documentary</a>
-            </li>
-            <li className="catalog__genres-item">
-              <a href="#" className="catalog__genres-link">Dramas</a>
-            </li>
-            <li className="catalog__genres-item">
-              <a href="#" className="catalog__genres-link">Horror</a>
-            </li>
-            {/* <li className="catalog__genres-item">
-              <a href="#" className="catalog__genres-link">Kids & Family</a>
-            </li> */}
-            <li className="catalog__genres-item">
-              <a href="#" className="catalog__genres-link">Romance</a>
-            </li>
-            <li className="catalog__genres-item">
-              <a href="#" className="catalog__genres-link">Sci-Fi</a>
-            </li>
-            <li className="catalog__genres-item">
-              <a href="#" className="catalog__genres-link">Thrillers</a>
-            </li>
+            {GenresList}
           </ul>
 
           <div className="catalog__films-list">
