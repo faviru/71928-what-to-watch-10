@@ -9,7 +9,7 @@ const reviewedFilmData: FilmCardInfoShort = {
   posterName: 'The Grand Budapest Hotel poster'
 };
 
-function Login(): JSX.Element {
+function AddReview(): JSX.Element {
 
   return (
 
@@ -93,4 +93,4 @@ function Login(): JSX.Element {
   );
 }
 
-export default Login;
+export default AddReview;
