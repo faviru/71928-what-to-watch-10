@@ -1,5 +1,5 @@
-import Footer from '../../components/footer';
 import Logo from '../../components/logo';
+import Footer from '../../components/footer';
 
 function Login(): JSX.Element {
 
